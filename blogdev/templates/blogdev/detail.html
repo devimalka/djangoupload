@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+ 
+<img src="{{post.cover_image.url}}" alt="{{post.title}}" class="img-fluid">
+  <div class="container-fluid">
+    {{post.body.html | safe}}
+  </div>
+{% endblock content %}

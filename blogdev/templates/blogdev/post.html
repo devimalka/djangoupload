@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+{% for post in posts  %}
+    
+   
+
+ 
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{post.cover_image.url}}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{post.title}}</h5>
+              <p class="card-text">{{post.body.html|safe|truncatechars:50}}</p>
+              <p class="card-text"><small class="text-muted">Created at {{post.created_at}}</small></p>
+              <p class="card-text"><small class="text-muted">Updated at {{post.modified_at}}</small></p>
+              <a href="{{post.id}}" class="btn btn-primary" role="button">Read More</a>
+            </div>
+          </div>
+        </div>
+   
+ {% endfor %}
+ <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+          
+          {% if posts.has_previous %}
+          <a class="page-link" href="?page={{post.previous_page_number}}">Previous</a>
+          {% endif %}
+              
+        
+      </li>
+      <li class="page-item">
+          
+          {% if posts.has_next %}
+          <a class="page-link" href="?page={{posts.next_page_number}}">next</a>
+          {% endif %}
+              
+      </li>
+      
+    </ul>
+  </nav>
+ 
+    
+        
+</div>
+{% endblock content %}

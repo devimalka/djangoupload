@@ -1,0 +1,32 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav-container{
+    display: flex;
+    background-color:#dae0da;
+}
+.nav-container a{
+    text-decoration: none;
+}
+.nav-links{
+    display: flex;
+  
+   
+}
+
+.nav-list{
+    list-style-type: none;
+    
+}
+
+
+  .postImage{
+      width: 250px;
+      height: 250px;
+  }
+
+  .aboutPost li{
+      display: inline;
+  }
